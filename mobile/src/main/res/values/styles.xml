@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of Butter.
+  ~
+  ~ Butter is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Butter is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Butter. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<style name="Theme.HiddenActivity" parent="Theme.AppCompat.NoActionBar">
+		<item name="android:windowIsTranslucent">true</item>
+		<item name="android:windowBackground">@android:color/transparent</item>
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowIsFloating">true</item>
+		<item name="android:backgroundDimEnabled">false</item>
+		<item name="android:windowAnimationStyle">@null</item>
+		<item name="android:activityOpenEnterAnimation">@null</item>
+		<item name="android:activityCloseEnterAnimation">@null</item>
+	</style>
+
+	<!-- These customisations apply to all platforms -->
+	<style name="Theme.Base" parent="Theme.AppCompat.NoActionBar">
+		<item name="colorPrimary">@color/primary</item>
+		<item name="colorPrimaryDark">@color/primary_dark</item>
+		<item name="colorAccent">@color/accent</item>
+		<item name="android:listDivider">@drawable/list_divider</item>
+		<!--<item name="windowActionBarOverlay">true</item>-->
+		<item name="android:windowBackground">@color/bg</item>
+        <item name="android:ratingBarStyle">@style/Theme.Butter.RatingBar</item>
+
+        <item name="toolbarStyle">@style/Custom.Widget.Toolbar</item>
+        <item name="toolbarNavigationButtonStyle">@style/Custom.Widget.Toolbar.Button.Navigation</item>
+        <item name="actionOverflowButtonStyle">@style/Custom.Widget.ActionButton.Overflow</item>
+	</style>
+
+	<style name="Theme.Butter" parent="Theme.Base">
+		<item name="android:seekBarStyle">@style/Theme.Butter.SeekBar</item>
+		<item name="android:progressBarStyleHorizontal">@style/Theme.Butter.ProgressBar</item>
+	</style>
+
+	<style name="Theme.Butter.Search" parent="Theme.Butter">
+		<item name="android:windowAnimationStyle">@style/ActivityFadeAnimation</item>
+	</style>
+
+    <style name="Theme.Butter.Detail" parent="Theme.Butter.TransparentStatusBar"/>
+
+    <style name="Theme.Butter.RemoteControl" parent="Theme.Butter.TransparentStatusBar"/>
+
+	<style name="ActivityFadeAnimation" parent="@android:style/Animation.Activity">
+		<item name="android:activityOpenEnterAnimation">@android:anim/fade_in</item>
+		<item name="android:activityOpenExitAnimation">@android:anim/fade_out</item>
+		<item name="android:activityCloseEnterAnimation">@android:anim/fade_in</item>
+		<item name="android:activityCloseExitAnimation">@android:anim/fade_out</item>
+	</style>
+
+    <style name="Theme.Dialog.Transparent" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="Theme.Dialog.Episode" parent="Theme.Dialog.Transparent">
+        <!-- Fill the screen -->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">bottom</item>
+
+        <item name="android:windowBackground">@color/overlay</item>
+        <item name="android:windowIsFloating">false</item>
+
+        <item name="android:windowAnimationStyle">@style/Theme.Dialog.Episode.Anim</item>
+    </style>
+
+    <style name="Theme.Dialog.Episode.Anim">
+        <item name="android:windowEnterAnimation">@anim/episode_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/episode_fade_out</item>
+    </style>
+
+    <style name="Theme.Butter.Toolbar.SearchView" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+		<item name="colorControlNormal">@android:color/white</item>
+		<item name="colorAccent">@android:color/white</item>
+	</style>
+
+	<style name="Theme.Butter.NavigationDrawer" parent="Theme.Butter"></style>
+
+	<style name="Theme.Butter.TransparentStatusBar" parent="Theme.Butter"></style>
+
+	<style name="Theme.Butter.ProgressBar" parent="android:Widget.ProgressBar.Horizontal">
+		<item name="android:progressDrawable">@drawable/progress_horizontal_holo_light</item>
+		<item name="android:indeterminateDrawable">
+			@drawable/progress_indeterminate_horizontal_holo_light
+		</item>
+		<item name="android:minHeight">16dip</item>
+		<item name="android:maxHeight">16dip</item>
+	</style>
+
+    <style name="Theme.Butter.SeekBar" parent="android:Widget.SeekBar">
+        <item name="android:progressDrawable">@drawable/scrubber_progress_horizontal</item>
+        <item name="android:indeterminateDrawable">@drawable/scrubber_progress_horizontal</item>
+        <item name="android:minHeight">13dip</item>
+        <item name="android:maxHeight">13dip</item>
+        <item name="android:thumb">@drawable/scrubber_control_selector</item>
+        <item name="android:thumbOffset">16dip</item>
+        <item name="android:paddingLeft">16dip</item>
+        <item name="android:paddingRight">16dip</item>
+    </style>
+
+    <style name="Theme.Butter.AboutButton" parent="android:Widget.Button">
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:drawablePadding">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Subhead.Inverse</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Theme.Butter.RatingBar" parent="android:Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">16dp</item>
+    </style>
+
+    <style name="Theme.Butter.DetailButton" parent="android:Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/detail_button_text_size</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:radius">2dp</item>
+        <item name="android:background">@drawable/selectable_background_rounded</item>
+    </style>
+
+    <!-- Fix Toolbar metrics -->
+    <style name="Custom.Widget.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="maxButtonHeight">48dp</item>
+        <item name="android:paddingLeft">@dimen/toolbar_horizontal_padding</item>
+        <item name="android:paddingRight">@dimen/toolbar_horizontal_padding</item>
+        <item name="contentInsetStart">@dimen/first_keyline</item>
+    </style>
+
+    <style name="Custom.Widget.Toolbar.Button.Navigation" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:minWidth">48dp</item>
+    </style>
+
+    <style name="Custom.Widget.ActionButton.Overflow" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+    <style name="Theme.Butter.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@android:color/white</item>
+    </style>
+
+</resources>

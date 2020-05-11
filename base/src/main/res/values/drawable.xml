@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- default drawables (null) -->
+    <!-- override in modules -->
+
+    <drawable name="movie_filter_a_to_z">@android:color/transparent</drawable>
+    <drawable name="movie_filter_genres">@android:color/transparent</drawable>
+    <drawable name="movie_filter_year">@android:color/transparent</drawable>
+    <drawable name="movie_filter_release_date">@android:color/transparent</drawable>
+    <drawable name="movie_filter_top_rated">@android:color/transparent</drawable>
+    <drawable name="movie_filter_popular_now">@android:color/transparent</drawable>
+    <drawable name="movie_filter_trending">@android:color/transparent</drawable>
+    
+    <drawable name="tvshow_filter_trending">@android:color/transparent</drawable>
+    <drawable name="tvshow_filter_popular_now">@android:color/transparent</drawable>
+    <drawable name="tvshow_filter_top_rated">@android:color/transparent</drawable>
+    <drawable name="tvshow_filter_last_updated">@android:color/transparent</drawable>
+    <drawable name="tvshow_filter_year">@android:color/transparent</drawable>
+    <drawable name="tvshow_filter_a_to_z">@android:color/transparent</drawable>
+
+    <drawable name="anime_filter_popular">@android:color/transparent</drawable>
+    <drawable name="anime_filter_year">@android:color/transparent</drawable>
+    <drawable name="anime_filter_a_to_z">@android:color/transparent</drawable>
+
+</resources>

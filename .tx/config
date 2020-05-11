@@ -1,0 +1,14 @@
+[main]
+host = https://www.transifex.com
+
+[butter-android.translations]
+file_filter = base/src/main/res/values-<lang>/strings.xml
+source_lang = en
+source_file = base/src/main/res/values/strings.xml
+type = ANDROID
+minimum_perc = 75
+trans.zh_CN = base/src/main/res/values-zh-rCN/strings.xml
+trans.pt_BR = base/src/main/res/values-pt-rBR/strings.xml
+trans.es_MX = base/src/main/res/values-es-rMX/strings.xml
+trans.zh_TW = base/src/main/res/values-zh-rTW/strings.xml
+trans.es_AR = base/src/main/res/values-es-rAR/strings.xml

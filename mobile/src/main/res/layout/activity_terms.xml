@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of Butter.
+  ~
+  ~ Butter is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Butter is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Butter. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:gravity="center_vertical"
+            android:text="Terms &amp; Conditions"
+            app:contentInsetStart="@dimen/first_keyline"
+            android:minHeight="?attr/actionBarSize"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:fitsSystemWindows="true"
+            android:clipToPadding="false"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#ffffffff"
+            android:background="?attr/colorPrimary" />
+
+        <ScrollView
+            android:id="@+id/termsScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/title"
+            android:layout_alignBottom="@+id/buttonsLinearLayout"
+            android:layout_marginBottom="80dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/terms" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/buttonsLinearLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+            <Button
+                android:enabled="true"
+                android:id="@+id/leaveBtn"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:text="@string/leave" />
+
+            <Button
+                android:enabled="false"
+                android:id="@+id/acceptBtn"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:text="@string/accept" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,1 @@
+include ':mobile', ':vlc', ':base', ':connectsdk', ':tv'

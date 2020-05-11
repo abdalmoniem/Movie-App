@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>    <!--
+  ~ This file is part of Butter.
+  ~
+  ~ Butter is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Butter is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Butter. If not, see <http://www.gnu.org/licenses/>.
+  -->    <!-- Currently there is no content to show in the navigation header, so elements are hidden -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	tools:layout_width="@dimen/nav_drawer_width"
+	android:clickable="true"
+	android:layout_height="@dimen/navlist_item_header"
+    android:layout_marginBottom="@dimen/list_vertical_padding">
+
+	<ImageView
+		android:id="@+id/bg_imageview"
+		android:layout_width="match_parent"
+		android:scaleType="fitXY"
+		android:layout_height="match_parent"
+		android:background="@drawable/movie_app_logo"/>
+
+	<TextView
+		android:id="@+id/title_textview"
+		android:text="User: Lauren Ipsum"
+		android:textColor="#ffffffff"
+		android:visibility="visible"
+		tools:visibility="visible"
+		android:singleLine="true"
+		android:layout_marginLeft="16dp"
+		android:layout_marginRight="16dp"
+		android:layout_alignWithParentIfMissing="true"
+		android:layout_toRightOf="@+id/profile_imageview"
+		android:layout_above="@+id/subtitle_textview"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+
+	<TextView
+		android:id="@+id/subtitle_textview"
+		android:text="Activity: 524 hours watched"
+		android:visibility="visible"
+		android:layout_marginLeft="16dp"
+		android:layout_marginBottom="16dp"
+		android:layout_marginRight="16dp"
+		tools:visibility="visible"
+		android:singleLine="true"
+		android:layout_alignParentBottom="true"
+		android:layout_toRightOf="@+id/profile_imageview"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textColor="#ffffffff"/>
+
+	<de.hdodenhof.circleimageview.CircleImageView
+		android:id="@+id/profile_imageview"
+		android:layout_marginTop="25dp"
+		android:layout_marginLeft="10dp"
+		android:layout_width="60dp"
+		android:visibility="visible"
+		tools:visibility="visible"
+		android:src="@drawable/ic_account_circle_white_24dp"
+		android:layout_alignParentBottom="true"
+		android:layout_height="60dp" />
+	<!-- A border can be added to the circle image view:-->
+	<!--app:border_width="1dp"-->
+	<!--app:border_color="#E4E4E4"-->
+
+</RelativeLayout>

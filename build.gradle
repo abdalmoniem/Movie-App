@@ -1,0 +1,90 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        //temporary to solve hugo error
+        mavenCentral()
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath 'com.jakewharton.hugo:hugo-plugin:1.2.1'
+        classpath 'com.github.dcendents:android-maven-plugin:1.2'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.17.0'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+ext {
+    compileSdk = 29
+    targetSdk = 29
+    minSdk = 15
+    appCompatVersion = '1.1.0'
+    butterknifeVersion = "10.2.1"
+    okHttpVersion = "3.4.2"
+    picassoVersion = "2.71828"
+    torrentstreamServerVersion = "ab4439a90e49bf4e9682d4b4754922b6c506069c"
+    daggerVersion = "2.7"
+    javaxAnnotationVersion = "1.2"  
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://maven.google.com' }
+        jcenter()
+        mavenCentral()
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url 'http://guardian.github.com/maven/repo-releases' }
+        maven { url 'https://jitpack.io' }
+        google()
+    }
+
+    //let project evaluate its script first
+    project.afterEvaluate {
+        //only apply to projects that have the android plugin
+        if (project.plugins.hasPlugin('com.android.application')) {
+            //global android setting
+            project.android {
+                packagingOptions {
+                    exclude 'META-INF/beans.xml'
+                    exclude 'META-INF/DEPENDENCIES'
+                    exclude 'META-INF/LICENSE'
+                    exclude 'META-INF/NOTICE'
+                    exclude 'META-INF/LICENSE.txt'
+                    exclude 'META-INF/NOTICE.txt'
+                    exclude 'META-INF/DEPENDENCIES.txt'
+                }
+
+                applicationVariants.all { variant ->
+                    //rename output files
+                    renameOutputFiles(project, variant)
+                }
+
+                adbOptions {
+                    timeOutInMs 10 * 60 * 1000  // 10 minutes
+                }
+
+                dexOptions {
+                    javaMaxHeapSize "512M"
+                }
+            }
+        }
+    }
+}
+
+def renameOutputFiles(Project project, variant) {
+    variant.outputs.each { output ->
+        output.versionCodeOverride = project.ext.versionCodes.get(variant.productFlavors[0].name, 0) * 10000000 + output.versionCode
+
+        def outputFileName = output.outputFile.name
+
+        // Customise APK filenames
+        if (outputFileName.contains("debug")) {
+            output.outputFileName = outputFileName.replace("debug", "development").replace(".apk", "-" + (System.getenv("BUILD_NUMBER") ?: "local") + ".apk")
+        } else {
+            output.outputFileName = outputFileName.replace(".apk", "-" + variant.versionName + ".apk")
+        }
+    }
+}
