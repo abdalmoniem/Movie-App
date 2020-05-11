@@ -1,4 +1,4 @@
-# Contributing to Butter
+# Contributing to Movie App
 
 So you're interested in giving us a hand? That's awesome! We've put together some brief guidelines that should help
 you get started quickly and easily.
@@ -15,18 +15,15 @@ There are lots and lots of ways to get involved, this document covers:
 <a name="report-a-bug"></a>
 ## General guidelines
 
-If you're about to raise an issue because think you've found a problem with Butter, or you'd like to make a request
+If you're about to raise an issue because think you've found a problem with Movie App, or you'd like to make a request
 for a new feature in the codebase, or any other reason then please read this first.
 
-The GitLab issue tracker is the preferred channel for [bug reports](#bugs),
+The GitHub issue tracker is the preferred channel for [bug reports](#bugs),
 [feature requests](#features), [change requests](#changes) and [submitting pull
 requests](#pull-requests), but please respect the following restrictions:
 
 * Please **search for existing issues**. Help us keep duplicate issues to a minimum by checking to see if someone
 has already reported your problem or requested your idea.
-
-* Please **do not** use the issue tracker for personal support requests (use
-  [the forum](http://discuss.butterproject.org) or IRC - #butterproject on freenode).
 
 * Please **do not** derail or troll issues. Keep the discussion on topic and respect the opinions of others.
 
@@ -38,7 +35,7 @@ Good bug reports are extremely helpful - thank you!
 
 Guidelines for bug reports:
 
-1. **Use the GitLab issue search** &mdash; check if the issue has already been reported.
+1. **Use the GitHub issue search** &mdash; check if the issue has already been reported.
 
 2. **Check if the issue has been fixed** &mdash; try to reproduce it using the latest `master` or look for closed issues.
 
@@ -67,8 +64,7 @@ Any other information you want to share that is relevant to the issue being repo
 
 ### Technical details:
 
-* Butter Version: stable 0.1.0
-* Downloaded from: butterproject.org
+* Movie App Version: stable 0.1.0
 * Connection: 10mbs
 ```
 
@@ -87,10 +83,10 @@ likely to be common.
 <a name="changes"></a>
 ### Change Requests
 
-Change requests cover both architectural and functional changes to how Butter works. If you have an idea for a
+Change requests cover both architectural and functional changes to how Movie App works. If you have an idea for a
 new or different dependency, a refactor, or an improvement to a feature, etc  - please be sure to:
 
-1. **Use the GitLab search** and check someone else didn't get there first
+1. **Use the GitHub search** and check someone else didn't get there first
 2. Take a moment to think about the best way to make a case for, and explain what you're thinking. Are you sure
 this shouldn't really be a [bug report](#bug-reports) or a [feature request](#feature-requests)? Is it really one
 idea or is it many? What's the context? What problem are you solving? Why is what you are suggesting better than
@@ -104,7 +100,7 @@ Pull requests are awesome. If you're looking to raise a PR for something which d
 
 ## Contributor License Agreement
 
-By contributing your code to Butter you grant the Butter Foundation a non-exclusive, irrevocable, worldwide,
+By contributing your code to Movie App you grant the Movie App Foundation a non-exclusive, irrevocable, worldwide,
 royalty-free, sublicenseable, transferable license under all of Your relevant intellectual property rights
 (including copyright, patent, and any other rights), to use, copy, prepare derivative works of, distribute and
 publicly perform and display the Contributions on any licensing terms, including without limitation:
@@ -121,7 +117,7 @@ claims, or has the right to claim, any right in any invention or patent related 
 represent that You are not legally obligated, whether by entering into an agreement or otherwise, in any way that
 conflicts with the terms of this license.
 
-The Butter Foundation acknowledges that, except as explicitly described in this Agreement, any Contribution which
+The Movie App Foundation acknowledges that, except as explicitly described in this Agreement, any Contribution which
 you provide is on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED,
 INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS
 FOR A PARTICULAR PURPOSE.
