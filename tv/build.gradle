@@ -7,7 +7,7 @@ android {
     def buildNumber = (System.getenv("BUILD_NUMBER") ?: 1) as int
 
     defaultConfig {
-        applicationId "pct.droid.tv"
+        applicationId "com.hifnawy.movie.app.tv"
         minSdkVersion 21
         targetSdkVersion rootProject.ext.targetSdk
         versionCode buildNumber
@@ -38,12 +38,20 @@ android {
 
     flavorDimensions 'platform'
     productFlavors {
-        arm {
+        armeabi_v7 {
             dimension 'platform'
             ndk {
-                abiFilters "arm64-v8a", "armeabi-v7a"
+                abiFilters "armeabi-v7a"
             }
         }
+
+        arm64_v8a {
+            dimension 'platform'
+            ndk {
+                abiFilters "arm64-v8a"
+            }
+        }
+
         x86 {
             dimension 'platform'
             ndk {

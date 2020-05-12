@@ -82,9 +82,9 @@ def renameOutputFiles(Project project, variant) {
 
         // Customise APK filenames
         if (outputFileName.contains("debug")) {
-            output.outputFileName = outputFileName.replace("debug", "development").replace(".apk", "-" + (System.getenv("BUILD_NUMBER") ?: "local") + ".apk")
+            output.outputFileName = project.parent.name.toLowerCase() + "-" + outputFileName.replace("debug", "development").replace(".apk", "-" + (System.getenv("BUILD_NUMBER") ?: "local") + ".apk")
         } else {
-            output.outputFileName = outputFileName.replace(".apk", "-" + variant.versionName + ".apk")
+            output.outputFileName = project.parent.name.toLowerCase() + "-" + outputFileName.replace(".apk", "-" + variant.versionName + ".apk")
         }
     }
 }

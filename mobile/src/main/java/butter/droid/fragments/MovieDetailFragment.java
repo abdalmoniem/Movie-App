@@ -258,13 +258,10 @@ public class MovieDetailFragment extends BaseDetailFragment {
                 SortUtils.sortQualities(qualities);
 
                 mQuality.setData(qualities);
-                mQuality.setListener(new OptionSelector.SelectorListener() {
-                    @Override
-                    public void onSelectionChanged(int position, String value) {
-                        mSelectedQuality = value;
-                        renderHealth();
-                        updateMagnet();
-                    }
+                mQuality.setListener((position, value) -> {
+                    mSelectedQuality = value;
+                    renderHealth();
+                    updateMagnet();
                 });
 
                 String quality = DefaultQuality.get(mActivity, Arrays.asList(qualities));
