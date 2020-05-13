@@ -163,6 +163,8 @@ public class MediaDetailActivity extends ButterBaseActivity implements BaseDetai
             public void onError(Exception exc) {
             }
         });
+
+        mScrollView.post(() -> mScrollView.fullScroll(View.FOCUS_DOWN));
     }
 
     @Override

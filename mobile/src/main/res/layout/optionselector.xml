@@ -51,11 +51,11 @@
             android:layout_marginEnd="@dimen/optionselector_text_margin_end"
             android:layout_gravity="bottom"
             android:duplicateParentState="false"
-            android:lines="1"
+            android:singleLine="false"
             android:gravity="start"
             android:textDirection="locale"
             tools:text="error"
-            android:textSize="@dimen/optionselector_text_size"
+            android:textSize="@dimen/optionselector_error_text_size"
             android:textColor="#ffff0000" />
 
     </LinearLayout>

@@ -36,8 +36,6 @@ public class ShowDetailAboutFragment extends BaseDetailFragment {
     TextView mSynopsis;
     @BindView(R.id.rating)
     RatingBar mRating;
-    @BindView(R.id.read_more)
-    Button mReadMore;
     @BindView(R.id.info_buttons)
     LinearLayout mInfoButtons;
     @BindView(R.id.magnet)
@@ -122,17 +120,6 @@ public class ShowDetailAboutFragment extends BaseDetailFragment {
         mOpenMagnet.setVisibility(View.GONE);
 
         return mRoot;
-    }
-
-    @OnClick(R.id.read_more)
-    public void openReadMore(View v) {
-        if (getFragmentManager().findFragmentByTag("overlay_fragment") != null)
-            return;
-        SynopsisDialogFragment synopsisDialogFragment = new SynopsisDialogFragment();
-        Bundle b = new Bundle();
-        b.putString("text", sShow.synopsis);
-        synopsisDialogFragment.setArguments(b);
-        synopsisDialogFragment.show(getFragmentManager(), "overlay_fragment");
     }
 
 }

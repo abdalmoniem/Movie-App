@@ -290,8 +290,6 @@ public class MainActivity extends ButterBaseActivity implements ProviderManager.
                 openPlayerTestDialog();
                 break;
             case R.id.action_filter:
-                Log.d("mn3m", "Internal SD Card Path: " + StorageUtils.getAllStorageLocations().get("sdCard").getAbsolutePath());
-
                 Dialog dialog = new Dialog(this);
 
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

@@ -68,6 +68,7 @@
     <dimen name="optionselector_volume_margin_start">56dp</dimen>
     <dimen name="optionselector_text_margin_end">16dp</dimen>
     <dimen name="optionselector_text_size">15sp</dimen>
+    <dimen name="optionselector_error_text_size">13sp</dimen>
 
     <dimen name="griditem_title_horizontal">16dp</dimen>
     <dimen name="griditem_title_bottom">16dp</dimen>

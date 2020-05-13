@@ -196,8 +196,6 @@ public class PreferencesActivity extends ButterBaseActivity
                     if (position == 0) {
                         onSelectionListener.onSelection(0, null);
                     } else {
-                        Log.d("mn3m", "choosing custom location");
-
                         DirectoryChooserConfig config = DirectoryChooserConfig.builder()
                                 .initialDirectory(StorageUtils.getInternalSdCardPath())
                                 .allowReadOnlyDirectory(true)

@@ -2,7 +2,6 @@ package butter.droid.base.subs;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -110,10 +109,18 @@ public class SubtitleDownloader {
                     subtitleFile.getParent() + "/" + media.title,
                     media.year,
                     streamInfo.getQuality());
-            subtitleFile.renameTo(new File(subtitleNewName));
-            SubtitleParseTask task = new SubtitleParseTask(subtitleLanguage, listener);
-            task.execute(subtitleFile);
+
+            File subtitleNewFile = new File(subtitleNewName);
+            if (!subtitleNewFile.exists()) {
+                if (subtitleFile.delete() && subtitleNewFile.createNewFile()) {
+                    SubtitleParseTask task = new SubtitleParseTask(subtitleLanguage, listener);
+                    task.execute(subtitleNewFile);
+                }
+            }
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            listener.onSubtitleDownloadCompleted(false, null);
+        } catch (IOException e) {
             e.printStackTrace();
             listener.onSubtitleDownloadCompleted(false, null);
         }

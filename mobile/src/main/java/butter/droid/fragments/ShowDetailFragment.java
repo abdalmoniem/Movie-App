@@ -66,9 +66,6 @@ public class ShowDetailFragment extends BaseDetailFragment {
     @BindView(R.id.synopsis)
     TextView mSynopsis;
     @Nullable
-    @BindView(R.id.read_more)
-    TextView mReadMore;
-    @Nullable
     @BindView(R.id.rating)
     RatingBar mRating;
     @Nullable
@@ -130,25 +127,8 @@ public class ShowDetailFragment extends BaseDetailFragment {
 
             if (!TextUtils.isEmpty(sShow.synopsis)) {
                 mSynopsis.setText(sShow.synopsis);
-                mSynopsis.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        boolean ellipsized = false;
-                        Layout layout = mSynopsis.getLayout();
-                        if (layout == null) return;
-                        int lines = layout.getLineCount();
-                        if (lines > 0) {
-                            int ellipsisCount = layout.getEllipsisCount(lines - 1);
-                            if (ellipsisCount > 0) {
-                                ellipsized = true;
-                            }
-                        }
-                        mReadMore.setVisibility(ellipsized ? View.VISIBLE : View.GONE);
-                    }
-                });
             } else {
                 mSynopsis.setClickable(false);
-                mReadMore.setVisibility(View.GONE);
             }
 
             Picasso.get().load(sShow.image).into(mCoverImage);
@@ -221,18 +201,6 @@ public class ShowDetailFragment extends BaseDetailFragment {
     public void onDetach() {
         super.onDetach();
         mActivity.setSubScrollListener(null);
-    }
-
-    @Optional
-    @OnClick(R.id.read_more)
-    public void openReadMore(View v) {
-        if (getFragmentManager().findFragmentByTag("overlay_fragment") != null)
-            return;
-        SynopsisDialogFragment synopsisDialogFragment = new SynopsisDialogFragment();
-        Bundle b = new Bundle();
-        b.putString("text", sShow.synopsis);
-        synopsisDialogFragment.setArguments(b);
-        synopsisDialogFragment.show(getFragmentManager(), "overlay_fragment");
     }
 
     public void openDialog(String title, String[] items, DialogInterface.OnClickListener onClickListener) {

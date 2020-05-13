@@ -78,8 +78,6 @@ public class MovieDetailFragment extends BaseDetailFragment {
     TextView mMeta;
     @BindView(R.id.synopsis)
     TextView mSynopsis;
-    @BindView(R.id.read_more)
-    Button mReadMore;
     @BindView(R.id.watch_trailer)
     Button mWatchTrailer;
     @BindView(R.id.magnet)
@@ -149,25 +147,8 @@ public class MovieDetailFragment extends BaseDetailFragment {
 
             if (!TextUtils.isEmpty(sMovie.synopsis)) {
                 mSynopsis.setText(sMovie.synopsis);
-                mSynopsis.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        boolean ellipsized = false;
-                        Layout layout = mSynopsis.getLayout();
-                        if (layout == null) return;
-                        int lines = layout.getLineCount();
-                        if (lines > 0) {
-                            int ellipsisCount = layout.getEllipsisCount(lines - 1);
-                            if (ellipsisCount > 0) {
-                                ellipsized = true;
-                            }
-                        }
-                        mReadMore.setVisibility(ellipsized ? View.VISIBLE : View.GONE);
-                    }
-                });
             } else {
                 mSynopsis.setClickable(false);
-                mReadMore.setVisibility(View.GONE);
             }
 
             mWatchTrailer.setVisibility(sMovie.trailer == null || sMovie.trailer.isEmpty() ? View.GONE : View.VISIBLE);
@@ -320,17 +301,6 @@ public class MovieDetailFragment extends BaseDetailFragment {
         } else {
             mOpenMagnet.setVisibility(View.VISIBLE);
         }
-    }
-
-    @OnClick(R.id.read_more)
-    public void openReadMore(View v) {
-        if (getFragmentManager().findFragmentByTag("overlay_fragment") != null)
-            return;
-        SynopsisDialogFragment synopsisDialogFragment = new SynopsisDialogFragment();
-        Bundle b = new Bundle();
-        b.putString("text", sMovie.synopsis);
-        synopsisDialogFragment.setArguments(b);
-        synopsisDialogFragment.show(getFragmentManager(), "overlay_fragment");
     }
 
     @OnClick(R.id.watch_trailer)

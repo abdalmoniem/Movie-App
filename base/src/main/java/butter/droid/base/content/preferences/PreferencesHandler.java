@@ -67,7 +67,7 @@ public interface PreferencesHandler {
 
             if(!isTV)
             prefItems.add(PrefItem.newBuilder(context)
-                    .setIconResource(R.drawable.ic_prefs_default_view)
+                    .setIconResource(R.drawable.ic_overview_white_24dp)
                     .setTitleResource(R.string.default_view)
                     .setPreferenceKey(Prefs.DEFAULT_PROVIDER)
                     .setDefaultValue(ProviderManager.PROVIDER_TYPE_MOVIE)
@@ -91,7 +91,7 @@ public interface PreferencesHandler {
                     .build());
 
             prefItems.add(PrefItem.newBuilder(context)
-                    .setIconResource(R.drawable.ic_prefs_default_view)
+                    .setIconResource(R.drawable.ic_grid_white_24dp)
                     .setTitleResource(R.string.grid_size)
                     .setPreferenceKey(Prefs.GRID_SIZE)
                     .setDefaultValue("2")

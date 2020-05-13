@@ -111,7 +111,7 @@
             android:layout_marginTop="@dimen/detail_vertical_offset"
             tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac scelerisque diam. Etiam porttitor nibh vitae purus luctus, a efficitur orci aliquam. Nulla varius mollis nisi at sagittis. Nam consectetur augue eu consequat feugiat. Aliquam."
             android:textDirection="locale"
-            android:maxLines="5"
+            android:singleLine="false"
             android:ellipsize="end"
             android:textSize="@dimen/detail_desc_text_size"
             android:textColor="@color/text_color" />
@@ -127,12 +127,6 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingBottom="@dimen/detail_vertical_offset"
         >
-        <Button
-            style="@style/Theme.Butter.DetailButton"
-            android:id="@+id/read_more"
-            android:layout_marginRight="@dimen/detail_button_margin"
-            android:layout_marginEnd="@dimen/detail_button_margin"
-            android:text="@string/read_more"  />
 
         <Button
             style="@style/Theme.Butter.DetailButton"
