@@ -236,7 +236,7 @@ public class StreamLoadingFragment extends BaseStreamLoadingFragment {
             if (BeamManager.getInstance(mContext).isConnected()) {
                 BeamPlayerActivity.startActivity(mContext, mStreamInfo, resumePosition);
             } else {
-                mPlayingExternal = DefaultPlayer.start(mStreamInfo.getMedia(), mStreamInfo.getSubtitleLanguage(), location);
+                mPlayingExternal = DefaultPlayer.start(mStreamInfo, location);
                 if (!mPlayingExternal) {
                     VideoPlayerActivity.startActivity(mContext, mStreamInfo, resumePosition);
                 }
@@ -252,6 +252,6 @@ public class StreamLoadingFragment extends BaseStreamLoadingFragment {
 
     @OnClick(R.id.startexternal_button)
     public void externalClick(View v) {
-        DefaultPlayer.start(mStreamInfo.getMedia(), mStreamInfo.getSubtitleLanguage(), mStreamInfo.getVideoLocation());
+        DefaultPlayer.start(mStreamInfo, mStreamInfo.getVideoLocation());
     }
 }

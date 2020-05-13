@@ -28,12 +28,14 @@ import com.github.se_bastiaan.torrentstreamserver.TorrentStreamServer;
 import java.io.File;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import butter.droid.base.ButterApplication;
 import butter.droid.base.providers.media.models.Episode;
 import butter.droid.base.providers.media.models.Media;
 import butter.droid.base.providers.subs.SubsProvider;
+import butter.droid.base.torrent.StreamInfo;
 import butter.droid.base.utils.LocaleUtils;
 import butter.droid.base.utils.PrefUtils;
 
@@ -93,13 +95,23 @@ public class DefaultPlayer {
      * @param location Video location
      * @return {@code true} if activity started, {@code false} otherwise
      */
-    public static boolean start(Media media, String subLanguage, String location) {
+    public static boolean start(StreamInfo streamInfo, String location) {
         Context context = ButterApplication.getAppContext();
+
+        Media media = streamInfo.getMedia();
+
+        String subLanguage = streamInfo.getSubtitleLanguage();
+
+
         String[] playerData = PrefUtils.get(context, Prefs.DEFAULT_PLAYER, "").split(DELIMITER);
         if (playerData.length > 1) {
             Intent intent = new Intent();
             if (null != media && media.subtitles != null && media.subtitles.size() > 0 && subLanguage != null && !subLanguage.equals("no-subs")) {
-                File subsLocation = new File(SubsProvider.getStorageLocation(context), media.videoId + "-" + subLanguage + ".srt");
+
+                File subsLocation = new File(SubsProvider.getStorageLocation(context), String.format(Locale.US, "%s (%s) [%s] [WEBRip] [YTS.MX].srt",
+                        media.title,
+                        media.year,
+                        streamInfo.getQuality()));
                 TorrentStreamServer.getInstance().setStreamSrtSubtitle(subsLocation);
                 intent.putExtra("subs", new Uri[]{Uri.parse(location.substring(0, location.lastIndexOf('.')) + ".srt")});
                 intent.putExtra("subs.name", new String[]{LocaleUtils.toLocale(subLanguage).getDisplayLanguage()});
