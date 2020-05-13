@@ -110,9 +110,19 @@ public class SubtitleDownloader {
                     media.year,
                     streamInfo.getQuality());
 
+            // File subtitleNewFile = new File(subtitleNewName);
+            // if (!subtitleNewFile.exists()) {
+            //     if (subtitleFile.delete() && subtitleNewFile.createNewFile()) {
+            //         SubtitleParseTask task = new SubtitleParseTask(subtitleLanguage, listener);
+            //         task.execute(subtitleNewFile);
+            //     }
+            // }
+
             File subtitleNewFile = new File(subtitleNewName);
-            if (!subtitleNewFile.exists()) {
-                if (subtitleFile.delete() && subtitleNewFile.createNewFile()) {
+
+            if (subtitleFile.renameTo(subtitleNewFile)) {
+                subtitleFile = subtitleNewFile;
+                if (subtitleFile.exists()) {
                     SubtitleParseTask task = new SubtitleParseTask(subtitleLanguage, listener);
                     task.execute(subtitleNewFile);
                 }
