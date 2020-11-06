@@ -8,7 +8,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath 'com.android.tools.build:gradle:4.1.0'
         classpath 'com.jakewharton.hugo:hugo-plugin:1.2.1'
         classpath 'com.github.dcendents:android-maven-plugin:1.2'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.17.0'
@@ -20,7 +20,7 @@ buildscript {
 ext {
     compileSdk = 29
     targetSdk = 29
-    minSdk = 15
+    minSdk = 16
     appCompatVersion = '1.1.0'
     butterknifeVersion = "10.2.1"
     okHttpVersion = "3.4.2"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <butter.droid.widget.ObservableParallaxScrollView
+    <org.hifnawy.widget.ObservableParallaxScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -64,7 +64,7 @@
 
         </LinearLayout>
 
-    </butter.droid.widget.ObservableParallaxScrollView>
+    </org.hifnawy.widget.ObservableParallaxScrollView>
 
     <include
         layout="@layout/toolbar"

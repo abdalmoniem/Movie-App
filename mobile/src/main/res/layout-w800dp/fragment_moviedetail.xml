@@ -37,7 +37,7 @@
                 android:orientation="vertical"
                 android:gravity="center_vertical"
                 android:background="@color/detail_header_title_bg">
-                <butter.droid.widget.AutoResizeRobotoTextView
+                <org.hifnawy.widget.AutoResizeRobotoTextView
                     android:id="@+id/title"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
                         style="@style/Theme.Butter.RatingBar"
                         android:max="10"
                         android:progress="5"/>
-                    <butter.droid.widget.SquareImageView
+                    <org.hifnawy.widget.SquareImageView
                         android:layout_width="12dp"
                         android:layout_height="12dp"
                         android:layout_marginLeft="8dp"
@@ -166,7 +166,7 @@
                 android:layout_below="@id/info_buttons"
                 android:background="@color/div_white" />
 
-            <butter.droid.widget.OptionSelector
+            <org.hifnawy.widget.OptionSelector
                 android:id="@+id/subtitles"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
@@ -184,7 +184,7 @@
                 android:layout_below="@id/subtitles"
                 android:background="@color/div_white" />
 
-            <butter.droid.widget.OptionSelector
+            <org.hifnawy.widget.OptionSelector
                 android:id="@+id/quality"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"

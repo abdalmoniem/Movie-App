@@ -21,6 +21,6 @@
 	<fragment
 		android:id="@+id/fragment"
 		android:layout_width="match_parent"
-		class="butter.droid.fragments.StreamLoadingFragment"
+		class="org.hifnawy.fragments.StreamLoadingFragment"
 		android:layout_height="match_parent" />
 </merge>

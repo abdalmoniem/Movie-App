@@ -37,7 +37,7 @@
                 android:orientation="vertical"
                 android:gravity="center_vertical"
                 android:background="@color/detail_header_title_bg">
-                <butter.droid.widget.AutoResizeRobotoTextView
+                <org.hifnawy.widget.AutoResizeRobotoTextView
                     android:id="@+id/title"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
@@ -120,7 +120,7 @@
         android:layout_marginTop="@dimen/detail_vertical_offset"
         android:background="@android:color/transparent" />
 
-    <butter.droid.widget.WrappingViewPager
+    <org.hifnawy.widget.WrappingViewPager
         android:id="@+id/pager"
         android:layout_below="@id/tabs"
         android:layout_width="match_parent"

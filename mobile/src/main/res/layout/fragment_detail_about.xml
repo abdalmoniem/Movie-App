@@ -65,7 +65,7 @@
                 android:max="10"
                 android:progress="5"/>
 
-            <butter.droid.widget.SquareImageView
+            <org.hifnawy.widget.SquareImageView
                 android:layout_width="12dp"
                 android:layout_height="12dp"
                 android:layout_marginLeft="6dp"

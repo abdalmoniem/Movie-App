@@ -22,11 +22,18 @@ android {
             storeFile System.getenv("S_KEYSTORE").toString() ? file(System.getenv("S_KEYSTORE").toString()) : file("")
             storePassword System.getenv("S_KEYPASS").toString() ?: ""
         }
+
+        auxConfig {
+            storeFile file('D:\\Projects\\Open Source Projects\\Movie-App\\keystore\\keystore.jks')
+            storePassword '123456'
+            keyAlias 'key0'
+            keyPassword '123456'
+        }
     }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.mainConfig
+            signingConfig signingConfigs.auxConfig
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -87,17 +94,19 @@ dependencies {
     implementation project(':base')
 
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'androidx.mediarouter:mediarouter:1.1.0'
+    implementation 'androidx.mediarouter:mediarouter:1.2.0'
     implementation 'androidx.annotation:annotation:1.1.0'
 
     implementation 'de.hdodenhof:circleimageview:2.0.0'
     implementation 'com.github.nirhart:parallaxscroll:dd53d1f9d1'
     implementation 'com.larswerkman:HoloColorPicker:1.5'
     implementation 'com.gu:option:1.3'
-    implementation 'com.github.isabsent:filepicker:1.1.01'
     implementation 'net.rdrei.android.dirchooser:library:3.0@aar'
+    implementation "com.github.skydoves:balloon:1.1.7"
 
     implementation 'com.sothree.slidinguppanel:library:3.2.0'
+
+    implementation 'com.github.jd-alexander:LikeButton:0.2.3'
 
     annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.daggerVersion}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeVersion}"

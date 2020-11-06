@@ -21,7 +21,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <butter.droid.widget.BottomSheetScrollView
+    <org.hifnawy.widget.BottomSheetScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -182,7 +182,7 @@
                     android:layout_height="1dp"
                     android:background="@color/div_white" />
 
-                <butter.droid.widget.OptionSelector
+                <org.hifnawy.widget.OptionSelector
                     android:id="@+id/subtitles"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
@@ -197,7 +197,7 @@
                     android:layout_marginStart="@dimen/optionselector_text_margin_start"
                     android:background="@color/div_white" />
 
-                <butter.droid.widget.OptionSelector
+                <org.hifnawy.widget.OptionSelector
                     android:id="@+id/quality"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
@@ -205,5 +205,5 @@
                     app:optionText="@string/quality" />
             </LinearLayout>
         </LinearLayout>
-    </butter.droid.widget.BottomSheetScrollView>
+    </org.hifnawy.widget.BottomSheetScrollView>
 </RelativeLayout>

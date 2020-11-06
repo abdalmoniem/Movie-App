@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
+
+    <RelativeLayout
+        android:id="@+id/base_info_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="100dp"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Title"
+            android:singleLine="false"
+            android:textStyle="bold"
+            android:textColor="@color/text_color"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/extras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/detail_rating_margin_top"
+            android:gravity="center_vertical"
+            android:layout_below="@id/title">
+
+            <RatingBar
+                android:id="@+id/rating"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:isIndicator="true"
+                style="@style/Theme.Butter.RatingBar"
+                android:max="10"
+                android:progress="5" />
+
+            <org.hifnawy.widget.SquareImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginStart="6dp"
+                android:id="@+id/health"
+                android:src="@drawable/ic_health_unknown"
+                android:scaleType="fitXY"
+                android:visibility="visible" />
+
+            <!--            <ImageButton-->
+            <!--                android:layout_width="30dp"-->
+            <!--                android:layout_height="30dp"-->
+            <!--                android:layout_marginLeft="6dp"-->
+            <!--                android:layout_marginStart="6dp"-->
+            <!--                android:id="@+id/favorite"-->
+            <!--                android:src="@drawable/ic_favorite_white_24dp"-->
+            <!--                android:background="@drawable/selectable_background"-->
+            <!--                android:visibility="visible"-->
+            <!--                android:scaleType="fitEnd"-->
+            <!--                android:layout_alignEnd="@+id/extras"-->
+            <!--                android:layout_alignRight="@+id/extras"-->
+            <!--                android:layout_alignTop="@+id/extras"-->
+            <!--                android:contentDescription="favorite" />-->
+
+        </LinearLayout>
+
+        <TextView
+            android:singleLine="false"
+            android:id="@+id/meta"
+            android:layout_below="@id/extras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/detail_meta_margin_top"
+            android:gravity="center_vertical"
+            android:text="2013 ● 94 min ● Animation"
+            android:textSize="@dimen/detail_meta_text_size"
+            android:textColor="@color/secondary_text_color" />
+
+        <com.like.LikeButton
+            app:icon_type="heart"
+            app:dots_primary_color="#ff00ff00"
+            app:dots_secondary_color="#ffffff00"
+            app:circle_start_color="#ff00ffff"
+            app:circle_end_color="#ffff00ff"
+            app:icon_size="30dp"
+            app:liked="false"
+            app:is_enabled="true"
+            app:anim_scale_factor="3"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+    </RelativeLayout>
+
+</RelativeLayout>

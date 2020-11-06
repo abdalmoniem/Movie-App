@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="butter.droid"
+    package="org.hifnawy"
     android:installLocation="auto">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -23,12 +23,12 @@
         android:logo="@drawable/movie_app_icon"
         android:label="@string/app_name"
         android:theme="@style/Theme.Butter"
-        android:name=".MobileButterApplication"
+        android:name="org.hifnawy.MobileButterApplication"
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true">
 
 		<activity
-			android:name="butter.droid.activities.MainActivity"
+			android:name="org.hifnawy.activities.MainActivity"
 			android:theme="@style/Theme.Butter.NavigationDrawer"
 			android:windowSoftInputMode="adjustPan">
             <intent-filter>
@@ -123,42 +123,42 @@
         </activity>
 
 		<activity
-			android:name="butter.droid.activities.MediaDetailActivity"
+			android:name="org.hifnawy.activities.MediaDetailActivity"
 			android:theme="@style/Theme.Butter.Detail"
-			android:parentActivityName="butter.droid.activities.MainActivity">
+			android:parentActivityName="org.hifnawy.activities.MainActivity">
 			<!-- Parent activity meta-data to support 4.0 and lower -->
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="butter.droid.activities.MainActivity" />
+				android:value="org.hifnawy.activities.MainActivity" />
 		</activity>
 
         <activity
-            android:name="butter.droid.activities.SearchActivity"
+            android:name="org.hifnawy.activities.SearchActivity"
             android:theme="@style/Theme.Butter.Search" />
 
-        <activity android:name="butter.droid.activities.TermsActivity" />
+        <activity android:name="org.hifnawy.activities.TermsActivity" />
 
         <activity
-            android:name="butter.droid.activities.AboutActivity"
+            android:name="org.hifnawy.activities.AboutActivity"
             android:label="@string/about_app" />
 
         <activity
-            android:name="butter.droid.activities.PreferencesActivity"
-            android:parentActivityName="butter.droid.activities.MainActivity">
+            android:name="org.hifnawy.activities.PreferencesActivity"
+            android:parentActivityName="org.hifnawy.activities.MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="butter.droid.activities.MainActivity" />
+                android:value="org.hifnawy.activities.MainActivity" />
         </activity>
 
 		<activity
             android:launchMode="singleTask"
-			android:name="butter.droid.activities.StreamLoadingActivity"
+			android:name="org.hifnawy.activities.StreamLoadingActivity"
             android:theme="@style/Theme.Butter.Detail" />
 
 		<activity
             android:launchMode="singleTask"
-			android:name="butter.droid.activities.VideoPlayerActivity"
+			android:name="org.hifnawy.activities.VideoPlayerActivity"
 			android:screenOrientation="sensorLandscape">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
@@ -434,20 +434,20 @@
         </activity>
 
         <activity
-            android:name="butter.droid.activities.BeamPlayerActivity"
+            android:name="org.hifnawy.activities.BeamPlayerActivity"
             android:theme="@style/Theme.Butter.RemoteControl"
             android:screenOrientation="sensorPortrait" />
 
 		<activity
-			android:name="butter.droid.activities.TrailerPlayerActivity"
+			android:name="org.hifnawy.activities.TrailerPlayerActivity"
 			android:screenOrientation="sensorLandscape" />
 
         <activity android:name="net.rdrei.android.dirchooser.DirectoryChooserActivity" />
 
-        <service android:name="butter.droid.base.torrent.TorrentService" />
-        <service android:name="butter.droid.base.beaming.BeamPlayerNotificationService" />
+        <service android:name="org.hifnawy.base.torrent.TorrentService" />
+        <service android:name="org.hifnawy.base.beaming.BeamPlayerNotificationService" />
 
-        <receiver android:name="butter.droid.base.torrent.TorrentBroadcastReceiver" android:exported="false">
+        <receiver android:name="org.hifnawy.base.torrent.TorrentBroadcastReceiver" android:exported="false">
             <intent-filter>
                 <action android:name="pct.droid.base.torrent.TorrentBroadcastReceiver.STOP" />
             </intent-filter>

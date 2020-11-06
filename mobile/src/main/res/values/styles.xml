@@ -133,7 +133,7 @@
     <style name="Theme.Butter.RatingBar" parent="android:Widget.RatingBar">
         <item name="android:progressDrawable">@drawable/ratingbar</item>
         <item name="android:minHeight">16dp</item>
-        <item name="android:maxHeight">16dp</item>
+        <item name="android:maxHeight">50dp</item>
     </style>
 
     <style name="Theme.Butter.DetailButton" parent="android:Widget.Button">

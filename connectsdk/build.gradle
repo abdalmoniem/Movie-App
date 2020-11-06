@@ -20,37 +20,37 @@ apply plugin: 'com.android.library'
 //apply plugin: 'org.robolectric'
 apply plugin: "jacoco"
 
-
+/*
 jacoco {
     toolVersion = "0.7.1.201405082137"
 }
+*/
 
-task jacocoTestReport(type:JacocoReport, dependsOn: "check") {
-    group = "Reporting"
+//task jacocoTestReport(type:JacocoReport, dependsOn: "check") {
+//    group = "Reporting"
+//
+//    description = "Generate Jacoco coverage reports"
+//
+//    classDirectories = fileTree(
+//            dir: 'build/intermediates/classes/debug',
+//            excludes: ['**/R.class',
+//                       '**/R$*.class',
+//                       '**/*$ViewInjector*.*',
+//                       '**/BuildConfig.*',
+//                       '**/Manifest*.*']
+//    )
+//
+//    additionalSourceDirs = files(android.sourceSets.main.java.srcDirs)
+//    sourceDirectories = files(android.sourceSets.main.java.srcDirs)
+//    executionData = files('build/jacoco/testDebug.exec')
+//
+//    reports {
+//        xml.enabled = true
+//        html.enabled = true
+//    }
+//}
 
-    description = "Generate Jacoco coverage reports"
-
-    classDirectories = fileTree(
-            dir: 'build/intermediates/classes/debug',
-            excludes: ['**/R.class',
-                       '**/R$*.class',
-                       '**/*$ViewInjector*.*',
-                       '**/BuildConfig.*',
-                       '**/Manifest*.*']
-    )
-
-    additionalSourceDirs = files(android.sourceSets.main.java.srcDirs)
-    sourceDirectories = files(android.sourceSets.main.java.srcDirs)
-    executionData = files('build/jacoco/testDebug.exec')
-
-    reports {
-        xml.enabled = true
-        html.enabled = true
-    }
-
-}
-
-build.dependsOn jacocoTestReport
+/*build.dependsOn jacocoTestReport*/
 
 android {
     compileSdkVersion rootProject.ext.compileSdk

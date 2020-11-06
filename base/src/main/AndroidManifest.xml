@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
-	package="butter.droid.base">
+	package="org.hifnawy.base">
 
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -9,7 +9,7 @@
 		android:usesCleartextTraffic="true"
 		tools:targetApi="M">
 
-		<service android:name="butter.droid.base.torrent.TorrentService" />
+		<service android:name="org.hifnawy.base.torrent.TorrentService" />
 
 		<provider
 			android:name="androidx.core.content.FileProvider"

@@ -17,7 +17,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="butter.droid.tv" >
+    package="org.hifnawy.tv" >
 
     <!-- Features -->
     <uses-feature
@@ -44,14 +44,14 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
-        android:name=".TVButterApplication"
+        android:name="org.hifnawy.tv.TVButterApplication"
         android:banner="@drawable/banner"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.Butter.TV" >
 
         <activity
-            android:name=".activities.TVLaunchActivity"
+            android:name="org.hifnawy.tv.activities.TVLaunchActivity"
             android:label="@string/app_name"
             android:noHistory="true"
             android:theme="@style/Theme.HiddenActivity" >
@@ -152,29 +152,29 @@
         </activity>
 
         <!-- Activities -->
-        <activity android:name=".activities.TVMainActivity" />
+        <activity android:name="org.hifnawy.tv.activities.TVMainActivity" />
         <activity
-            android:name=".activities.TVWelcomeActivity"
+            android:name="org.hifnawy.tv.activities.TVWelcomeActivity"
             android:noHistory="true"
             android:theme="@style/Theme.Butter.TV.GuidedStep" />
-        <activity android:name=".activities.TVMediaDetailActivity" />
-        <activity android:name=".activities.TVMediaGridActivity" />
-        <activity android:name=".activities.TVSearchActivity" />
+        <activity android:name="org.hifnawy.tv.activities.TVMediaDetailActivity" />
+        <activity android:name="org.hifnawy.tv.activities.TVMediaGridActivity" />
+        <activity android:name="org.hifnawy.tv.activities.TVSearchActivity" />
         <activity
-            android:name=".activities.TVPreferencesActivity"
+            android:name="org.hifnawy.tv.activities.TVPreferencesActivity"
             android:theme="@style/Theme.Butter.TV.GuidedStep" />
-        <activity android:name=".activities.TVStreamLoadingActivity" android:noHistory="true" />
-        <activity android:name=".activities.TVVideoPlayerActivity" android:launchMode="singleTask" />
-        <activity android:name=".activities.TVTrailerPlayerActivity" />
+        <activity android:name="org.hifnawy.tv.activities.TVStreamLoadingActivity" android:noHistory="true" />
+        <activity android:name="org.hifnawy.tv.activities.TVVideoPlayerActivity" android:launchMode="singleTask" />
+        <activity android:name="org.hifnawy.tv.activities.TVTrailerPlayerActivity" />
         <activity
-            android:name=".activities.TVUpdateActivity"
+            android:name="org.hifnawy.tv.activities.TVUpdateActivity"
             android:theme="@style/Theme.Butter.TV.GuidedStep" />
 
-        <service android:name="butter.droid.base.torrent.TorrentService" />
-        <service android:name="butter.droid.tv.service.RecommendationService" android:enabled="true" />
+        <service android:name="org.hifnawy.base.torrent.TorrentService" />
+        <service android:name="org.hifnawy.tv.service.RecommendationService" android:enabled="true" />
 
         <receiver
-            android:name="butter.droid.tv.receivers.BootReceiver"
+            android:name="org.hifnawy.tv.receivers.BootReceiver"
             android:enabled="true"
             android:exported="false" >
             <intent-filter>
@@ -182,8 +182,8 @@
             </intent-filter>
         </receiver>
 
-        <provider android:authorities="butter.droid.tv.RecommendationContentProvider"
-            android:name="butter.droid.tv.service.recommendation.RecommendationContentProvider" android:exported="true" />
+        <provider android:authorities="org.hifnawy.tv.RecommendationContentProvider"
+            android:name="org.hifnawy.tv.service.recommendation.RecommendationContentProvider" android:exported="true" />
 
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     </application>

@@ -52,7 +52,7 @@
 			app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 	</androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-	<butter.droid.widget.ScrimInsetsFrameLayout
+	<org.hifnawy.widget.ScrimInsetsFrameLayout
 		android:id="@+id/navigation_drawer_container"
 		android:layout_width="@dimen/nav_drawer_width"
 		android:layout_gravity="start"
@@ -63,9 +63,9 @@
 
 		<fragment
 			android:id="@+id/navigation_drawer_fragment"
-			class="butter.droid.fragments.NavigationDrawerFragment"
+			class="org.hifnawy.fragments.NavigationDrawerFragment"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent" />
-	</butter.droid.widget.ScrimInsetsFrameLayout>
+	</org.hifnawy.widget.ScrimInsetsFrameLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
